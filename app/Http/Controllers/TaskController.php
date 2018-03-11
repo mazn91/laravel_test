@@ -8,10 +8,12 @@ class TaskController extends Controller
 {
     
 
-
+	//view tasks page
     public function tasks(){
-    	return view('tasks');
+    	return view('tasks'); 
     }
+
+    
 
 
 }

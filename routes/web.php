@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/post', 'PostController@show'); 
 
+Route::post('/post', 'PostController@create'); 
 
 
 Route::get('/about', function () {

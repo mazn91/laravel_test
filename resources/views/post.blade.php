@@ -5,7 +5,7 @@
 
 	<h2>Post page!</h2>
 
-	<form action="" method="/post">
+	<form action="/post" method="post">
 
 		{{ csrf_field() }}
 
@@ -23,6 +23,10 @@
 
 	  <button type="submit" class="btn btn-default">Publish</button>
 	</form>
+
+
+
+	@include('layouts.errors')
 
 
 @endsection

@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/test', 'TaskController@test'); 
+Route::get('/post', 'PostController@show'); 
 
 
 

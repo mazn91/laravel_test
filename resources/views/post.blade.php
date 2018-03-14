@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<h2>About us!</h2>
+	<h2>Post page!</h2>
 
 
 @endsection

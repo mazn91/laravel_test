@@ -9,8 +9,8 @@ class TaskController extends Controller
     
 
 	//view tasks page
-    public function tasks(){
-    	return view('tasks'); 
+    public function test(){
+    	return view('test'); 
     }
 
     

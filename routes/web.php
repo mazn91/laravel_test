@@ -11,23 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-
-
-
-
 
 Route::get('/post', 'PostController@show'); 
 
 Route::post('/post', 'PostController@create'); 
 
+Route::get('/', 'PostController@show_posts');
 
-Route::get('/about', function () {
-    return view('about');
-});
+
 
 
 

@@ -33,4 +33,12 @@ class PostController extends Controller
 
     	return redirect('/');
     }
+
+
+    public function show_posts(){
+
+    	$posts = Post::orderBy('id', 'desc')->get();
+
+    	return view('home', compact('posts'));
+    }
 }

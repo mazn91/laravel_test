@@ -37,7 +37,7 @@ class PostController extends Controller
 
     public function show_posts(){
 
-    	$posts = Post::orderBy('id', 'desc')->get();
+    	$posts = Post::orderBy('created_at', 'desc')->get();
 
     	return view('home', compact('posts'));
     }

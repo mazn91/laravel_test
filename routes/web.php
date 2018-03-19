@@ -22,6 +22,22 @@ Route::get('/', 'PostController@show_posts');
 Route::post('/post/{post}/comment', 'CommentController@create');
 
 
+// route for creeating a new user
+Route::get('/register', 'AuthController@create');
+
+// route for creating a new user
+Route::post('/register', 'AuthController@store');
+
+// route for showing a logging form
+Route::get('/login', 'AuthController@show_login');
+// route for logging in a user
+Route::post('/login', 'AuthController@login');
+
+// route for logging out a user 
+Route::get('/logout', 'AuthController@destroy');
+
+
+Route::get('/profile', 'ProfileController@show');
 
 
 

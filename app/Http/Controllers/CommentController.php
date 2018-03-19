@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\Post;
+use Auth;
 
 class CommentController extends Controller
 {
@@ -27,7 +28,7 @@ class CommentController extends Controller
     	]);
 
     	$comment = new Comment;
-    	$comment->user_id = 1;
+    	$comment->user_id = Auth::user()->id;
     	$comment->post_id = $post->id;
     	$comment->comment = request('comment');
 

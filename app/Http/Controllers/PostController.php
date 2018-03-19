@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 
 class PostController extends Controller
 {
     
+
+    public function __construct() {
+
+    	$this->middleware('auth')->except(['show']);
+    }
 
     public function show() {
     	return view('post');
@@ -25,7 +31,7 @@ class PostController extends Controller
     	]);
 
     	$post = new Post;
-
+    	$post->user_id = Auth::user()->id;
     	$post->title = request('title');
     	$post->body = request('body');
 
@@ -33,6 +39,7 @@ class PostController extends Controller
 
     	return redirect('/');
     }
+
 
 
     public function show_posts(){

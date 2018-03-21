@@ -12,7 +12,17 @@
 		            <p class="blog-post-meta">{{ $post->created_at->diffForHumans() }} by <a href="#">{{ ucfirst($post->user->name) }}</a></p>
 
 
-		            <p>{{ $post->body }}</p><hr>
+		            <p>{{ $post->body }}</p>
+
+
+
+		            @if($post->user_id == Auth::user()->id)
+
+		            	<a href="/post/delete/{{ $post->id }}" style="color: red">Delete</a>
+
+		            @endif
+
+		            <hr>
 
 	            </div>
 

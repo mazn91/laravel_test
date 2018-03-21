@@ -37,6 +37,9 @@ class PostController extends Controller
 
     	$post->save();
 
+
+    	session()->flash('message', 'Your post has been published!');
+
     	return redirect('/');
     }
 
@@ -47,5 +50,18 @@ class PostController extends Controller
     	$posts = Post::orderBy('created_at', 'desc')->get();
 
     	return view('home', compact('posts'));
+    }
+
+
+
+    public function delete($id) {
+
+    	$post = Post::find($id);
+
+    	$post->delete();
+
+
+
+    	return redirect('/');
     }
 }

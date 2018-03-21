@@ -18,6 +18,9 @@ Route::post('/post', 'PostController@create');
 
 Route::get('/', 'PostController@show_posts');
 
+// route for deleting a post
+Route::get('/post/delete/{id}', 'PostController@delete');
+
 
 Route::post('/post/{post}/comment', 'CommentController@create');
 
@@ -39,5 +42,8 @@ Route::get('/logout', 'AuthController@destroy');
 
 Route::get('/profile', 'ProfileController@show');
 
+Route::get('/profile_update/{id}', 'ProfileController@create');
+
+Route::post('/profile_update/{id}', 'ProfileController@update');
 
 
